@@ -33,7 +33,7 @@ const PORT = process.env.PORT || 5000;
 app.post("/api/payment/create-order", async (req, res) => {
   try {
     const options = {
-      amount: 100,
+      amount: 990,
       currency: "INR",
       receipt: "premium_receipt_" + Date.now()
     };
