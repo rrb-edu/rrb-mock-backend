@@ -1,5 +1,5 @@
 require("dotenv").config();
-
+const paymentRoutes = require("./routes/paymentRoutes");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -17,6 +17,7 @@ const authRoutes = require("./routes/authRoutes");
 app.use("/api/auth", authRoutes);
 const resultRoutes = require("./routes/resultRoutes");
 app.use("/api/results", resultRoutes);
+app.use("/api/payments", paymentRoutes);
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
   console.log("MongoDB Connected ✅");
